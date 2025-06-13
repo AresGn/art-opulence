@@ -1,0 +1,44 @@
+<template>
+  <div class="container mx-auto px-4 py-16">
+    <h1 class="text-4xl font-bold mb-8 text-center">Mes Projets</h1>
+    <div class="flex flex-wrap justify-center gap-4 mb-12">
+      <button 
+        v-for="category in categories" 
+        :key="category"
+        @click="selectedCategory = category"
+        :class="[
+          'px-6 py-2 rounded-full transition-colors',
+          selectedCategory === category 
+            ? 'bg-blue-600 text-white' 
+            : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+        ]"
+      >
+        {{ category }}
+      </button>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <ProjectCard v-for="project in filteredProjects" :key="project.id" :project="project" />
+    </div>
+    <div v-if="filteredProjects.length === 0" class="text-center py-12">
+      <p class="text-gray-600 text-lg">Aucun projet trouve pour cette categorie.</p>
+    </div>
+  </div>
+</template>
+
+<script setup>
+const { getAllProjects } = useProjects()
+const projects = await getAllProjects()
+
+const selectedCategory = ref('Tous')
+const categories = ['Tous', 'Logo', 'Flyer', 'Affiche', 'Video', 'Banniere']
+
+const filteredProjects = computed(() => {
+  if (selectedCategory.value === 'Tous') return projects
+  return projects.filter(p => p.category === selectedCategory.value.toLowerCase())
+})
+
+useSeoMeta({
+  title: 'Projets - Portfolio Designer Graphique',
+  description: 'Decouvrez tous mes projets de design graphique : logos, flyers, affiches, bannieres et videos.'
+})
+</script>
