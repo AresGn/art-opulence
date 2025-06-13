@@ -8,9 +8,9 @@
     "tools": ["Illustrator", "Photoshop"],
     "description": "Création d'une identité visuelle moderne et élégante pour un restaurant gastronomique. Le logo combine sophistication et accessibilité, reflétant l'excellence culinaire tout en restant mémorable.",
     "images": [
-      "https://via.placeholder.com/800x600/3B82F6/FFFFFF?text=Logo+Principal",
-      "https://via.placeholder.com/800x600/3B82F6/FFFFFF?text=Variations+Logo",
-      "https://via.placeholder.com/800x600/3B82F6/FFFFFF?text=Applications"
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826631/RAMEL_Projet/Logo/AFANE_4.jpg",
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826633/RAMEL_Projet/Logo/afane_logo00.jpg",
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826634/RAMEL_Projet/Logo/ARNO_LOGO1.0.jpg"
     ],
     "featured": true
   },
@@ -23,9 +23,9 @@
     "tools": ["Photoshop", "InDesign"],
     "description": "Design d'un flyer vibrant et énergique pour un festival de musique électronique. Utilisation de couleurs néon et d'effets visuels pour capturer l'atmosphère électrisante de l'événement.",
     "images": [
-      "https://via.placeholder.com/800x600/8B5CF6/FFFFFF?text=Flyer+Recto",
-      "https://via.placeholder.com/800x600/8B5CF6/FFFFFF?text=Flyer+Verso",
-      "https://via.placeholder.com/800x600/8B5CF6/FFFFFF?text=Version+Web"
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826555/RAMEL_Projet/Affiche/Graphic_Design.jpg",
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826556/RAMEL_Projet/Affiche/IMG-20191214-WA0017.jpg",
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826558/RAMEL_Projet/Affiche/LYNE_ESTH_1.jpg"
     ],
     "featured": true
   },
@@ -38,11 +38,11 @@
     "tools": ["After Effects", "Premiere Pro", "Illustrator"],
     "description": "Montage vidéo promotionnel dynamique pour une startup technologique. Animation de logos, transitions fluides et storytelling visuel pour présenter les services de l'entreprise.",
     "images": [
-      "https://via.placeholder.com/800x600/EF4444/FFFFFF?text=Video+Thumbnail",
-      "https://via.placeholder.com/800x600/EF4444/FFFFFF?text=Storyboard",
-      "https://via.placeholder.com/800x600/EF4444/FFFFFF?text=Behind+Scenes"
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826579/RAMEL_Projet/Affiche/rob2.jpg",
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826565/RAMEL_Projet/Affiche/PENTECOTE_2025_CIDEV.jpg",
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826567/RAMEL_Projet/Affiche/PENTECOTE_COTEF_2025.jpg"
     ],
-    "video": "https://via.placeholder.com/800x600/EF4444/FFFFFF?text=Video+Preview",
+    "video": "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826579/RAMEL_Projet/Affiche/rob2.jpg",
     "featured": true
   },
   {
@@ -54,9 +54,9 @@
     "tools": ["Photoshop", "Illustrator"],
     "description": "Création d'une affiche de film dramatique avec une approche minimaliste mais impactante. Jeu sur les contrastes et la typographie pour créer une atmosphère mystérieuse.",
     "images": [
-      "https://via.placeholder.com/800x600/10B981/FFFFFF?text=Affiche+Finale",
-      "https://via.placeholder.com/800x600/10B981/FFFFFF?text=Concepts+Initiaux",
-      "https://via.placeholder.com/800x600/10B981/FFFFFF?text=Déclinaisons"
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826505/RAMEL_Projet/Affiche/1_mai_cidev-ong.jpg",
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826506/RAMEL_Projet/Affiche/CIDEV_8mars_2025.jpg",
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826509/RAMEL_Projet/Affiche/CIDEV_JOURNNEE_DE_L_ARBRE.jpg"
     ],
     "featured": false
   },
@@ -69,9 +69,9 @@
     "tools": ["Photoshop", "After Effects"],
     "description": "Série de bannières web animées pour une boutique de mode en ligne. Design moderne et accrocheur avec animations subtiles pour améliorer l'engagement utilisateur.",
     "images": [
-      "https://via.placeholder.com/800x600/F59E0B/FFFFFF?text=Banniere+Hero",
-      "https://via.placeholder.com/800x600/F59E0B/FFFFFF?text=Banniere+Promo",
-      "https://via.placeholder.com/800x600/F59E0B/FFFFFF?text=Banniere+Mobile"
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826548/RAMEL_Projet/Banniere/1.jpg",
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826549/RAMEL_Projet/Banniere/2.jpg",
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826550/RAMEL_Projet/Banniere/3.jpg"
     ],
     "featured": false
   },
@@ -84,7 +84,7 @@
     "tools": ["Illustrator", "Photoshop"],
     "description": "Logo moderne pour un restaurant branché.",
     "images": [
-      "https://via.placeholder.com/800x600/3B82F6/FFFFFF?text=Logo+ABC"
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826631/RAMEL_Projet/Logo/AFANE_4.jpg"
     ],
     "featured": false
   },
@@ -97,7 +97,7 @@
     "tools": ["Photoshop"],
     "description": "Flyer élégant pour une soirée jazz.",
     "images": [
-      "https://via.placeholder.com/800x600/8B5CF6/FFFFFF?text=Flyer+Jazz"
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826555/RAMEL_Projet/Affiche/Graphic_Design.jpg"
     ],
     "featured": false
   },
@@ -110,9 +110,9 @@
     "tools": ["Premiere Pro"],
     "description": "Vidéo corporate pour la communication interne.",
     "images": [
-      "https://via.placeholder.com/800x600/EF4444/FFFFFF?text=Video+Alpha"
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826579/RAMEL_Projet/Affiche/rob2.jpg"
     ],
-    "video": "https://via.placeholder.com/800x600/EF4444/FFFFFF?text=Video+Alpha",
+    "video": "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826579/RAMEL_Projet/Affiche/rob2.jpg",
     "featured": false
   },
   {
@@ -124,7 +124,7 @@
     "tools": ["Illustrator"],
     "description": "Affiche pour un festival de cinéma.",
     "images": [
-      "https://via.placeholder.com/800x600/10B981/FFFFFF?text=Affiche+Festival"
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826505/RAMEL_Projet/Affiche/1_mai_cidev-ong.jpg"
     ],
     "featured": false
   },
@@ -137,7 +137,7 @@
     "tools": ["Photoshop"],
     "description": "Bannière promotionnelle pour les soldes d'été.",
     "images": [
-      "https://via.placeholder.com/800x600/F59E0B/FFFFFF?text=Banniere+Ete"
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826548/RAMEL_Projet/Banniere/1.jpg"
     ],
     "featured": false
   },
@@ -150,7 +150,7 @@
     "tools": ["Illustrator"],
     "description": "Logo pour une pizzeria italienne.",
     "images": [
-      "https://via.placeholder.com/800x600/3B82F6/FFFFFF?text=Logo+Napoli"
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826631/RAMEL_Projet/Logo/AFANE_4.jpg"
     ],
     "featured": false
   },
@@ -163,7 +163,7 @@
     "tools": ["InDesign"],
     "description": "Flyer pour la Nuit Blanche à Paris.",
     "images": [
-      "https://via.placeholder.com/800x600/8B5CF6/FFFFFF?text=Flyer+Nuit+Blanche"
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826555/RAMEL_Projet/Affiche/Graphic_Design.jpg"
     ],
     "featured": false
   },
@@ -176,9 +176,9 @@
     "tools": ["After Effects"],
     "description": "Vidéo de présentation d'un nouveau produit.",
     "images": [
-      "https://via.placeholder.com/800x600/EF4444/FFFFFF?text=Video+Produit"
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826579/RAMEL_Projet/Affiche/rob2.jpg"
     ],
-    "video": "https://via.placeholder.com/800x600/EF4444/FFFFFF?text=Video+Produit",
+    "video": "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826579/RAMEL_Projet/Affiche/rob2.jpg",
     "featured": false
   },
   {
@@ -190,7 +190,7 @@
     "tools": ["Photoshop"],
     "description": "Affiche pour une pièce de théâtre.",
     "images": [
-      "https://via.placeholder.com/800x600/10B981/FFFFFF?text=Affiche+Theatre"
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826505/RAMEL_Projet/Affiche/1_mai_cidev-ong.jpg"
     ],
     "featured": false
   },
@@ -203,7 +203,7 @@
     "tools": ["After Effects"],
     "description": "Bannière pour le Black Friday.",
     "images": [
-      "https://via.placeholder.com/800x600/F59E0B/FFFFFF?text=Banniere+Black+Friday"
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826548/RAMEL_Projet/Banniere/1.jpg"
     ],
     "featured": false
   },
@@ -216,7 +216,7 @@
     "tools": ["Illustrator"],
     "description": "Logo pour un bar à sushi.",
     "images": [
-      "https://via.placeholder.com/800x600/3B82F6/FFFFFF?text=Logo+Sushi+Bar"
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826631/RAMEL_Projet/Logo/AFANE_4.jpg"
     ],
     "featured": false
   },
@@ -229,7 +229,7 @@
     "tools": ["Photoshop"],
     "description": "Flyer pour le carnaval de Nice.",
     "images": [
-      "https://via.placeholder.com/800x600/8B5CF6/FFFFFF?text=Flyer+Carnaval"
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826555/RAMEL_Projet/Affiche/Graphic_Design.jpg"
     ],
     "featured": false
   },
@@ -242,9 +242,9 @@
     "tools": ["After Effects"],
     "description": "Vidéo motion design pour une agence.",
     "images": [
-      "https://via.placeholder.com/800x600/EF4444/FFFFFF?text=Video+Motion"
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826579/RAMEL_Projet/Affiche/rob2.jpg"
     ],
-    "video": "https://via.placeholder.com/800x600/EF4444/FFFFFF?text=Video+Motion",
+    "video": "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826579/RAMEL_Projet/Affiche/rob2.jpg",
     "featured": false
   },
   {
@@ -256,7 +256,7 @@
     "tools": ["Illustrator"],
     "description": "Affiche pour une exposition d'art.",
     "images": [
-      "https://via.placeholder.com/800x600/10B981/FFFFFF?text=Affiche+Expo"
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826505/RAMEL_Projet/Affiche/1_mai_cidev-ong.jpg"
     ],
     "featured": false
   },
@@ -269,7 +269,7 @@
     "tools": ["Photoshop"],
     "description": "Bannière pour la promotion du Nouvel An.",
     "images": [
-      "https://via.placeholder.com/800x600/F59E0B/FFFFFF?text=Banniere+Nouvel+An"
+      "https://res.cloudinary.com/dwsjriapi/image/upload/v1749826548/RAMEL_Projet/Banniere/1.jpg"
     ],
     "featured": false
   }
