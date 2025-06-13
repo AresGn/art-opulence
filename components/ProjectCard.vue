@@ -1,7 +1,7 @@
 <template>
   <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-    <!-- Image section - plus grande et plus proéminente -->
-    <div class="relative group overflow-hidden h-80">
+    <!-- Image section - responsive et plus proéminente -->
+    <div class="relative group overflow-hidden h-56 sm:h-64 md:h-72 lg:h-80">
       <img
         :src="project.images[0]"
         :alt="project.title"
@@ -10,42 +10,42 @@
         @load="handleImageLoad"
         loading="lazy"
       >
-      <!-- Overlay avec effet gradient subtil -->
-      <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+      <!-- Overlay avec effet gradient subtil - visible sur mobile, hover sur desktop -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+        <div class="absolute bottom-3 md:bottom-4 left-3 md:left-4 right-3 md:right-4 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2">
           <div class="text-white">
-            <p class="text-sm font-medium opacity-90">{{ project.client }}</p>
+            <p class="text-xs sm:text-sm font-medium opacity-90">{{ project.client }}</p>
             <p class="text-xs opacity-75">{{ project.date }}</p>
           </div>
           <NuxtLink
             :to="`/projets/${project.id}`"
-            class="bg-white text-gray-900 px-4 py-2 rounded-lg font-semibold text-sm hover:bg-gray-100 transition-colors shadow-lg"
+            class="bg-white text-gray-900 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg font-semibold text-xs sm:text-sm hover:bg-gray-100 transition-colors shadow-lg w-full sm:w-auto text-center min-h-[44px] flex items-center justify-center"
           >
             Voir le projet
           </NuxtLink>
         </div>
       </div>
       <!-- Badge de catégorie -->
-      <div class="absolute top-4 left-4">
-        <span class="bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-xs font-semibold">
+      <div class="absolute top-3 md:top-4 left-3 md:left-4">
+        <span class="bg-white/90 backdrop-blur-sm text-gray-800 px-2 md:px-3 py-1 rounded-full text-xs font-semibold">
           {{ getCategoryDisplayName(project.category) }}
         </span>
       </div>
     </div>
 
-    <!-- Contenu réduit pour mettre l'accent sur l'image -->
-    <div class="p-4">
-      <h3 class="text-lg font-bold mb-2 text-gray-900 line-clamp-2">{{ project.title }}</h3>
-      <p class="text-gray-600 text-sm mb-3 line-clamp-2">{{ project.description }}</p>
-      <div class="flex flex-wrap gap-1">
+    <!-- Contenu optimisé pour mobile -->
+    <div class="p-4 md:p-5">
+      <h3 class="text-lg md:text-xl font-bold mb-3 text-gray-900 line-clamp-2 leading-tight">{{ project.title }}</h3>
+      <p class="text-gray-600 text-sm md:text-base mb-4 line-clamp-2 leading-relaxed">{{ project.description }}</p>
+      <div class="flex flex-wrap gap-2">
         <span
           v-for="tool in project.tools.slice(0, 3)"
           :key="tool"
-          class="bg-blue-50 text-blue-700 px-2 py-1 rounded-md text-xs font-medium"
+          class="bg-blue-50 text-blue-700 px-3 py-1.5 rounded-md text-xs md:text-sm font-medium"
         >
           {{ tool }}
         </span>
-        <span v-if="project.tools.length > 3" class="text-gray-400 text-xs px-2 py-1">
+        <span v-if="project.tools.length > 3" class="text-gray-400 text-xs md:text-sm px-2 py-1.5">
           +{{ project.tools.length - 3 }}
         </span>
       </div>

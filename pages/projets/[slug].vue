@@ -1,37 +1,42 @@
 <template>
   <div v-if="project" class="min-h-screen bg-gray-50">
-    <!-- Hero Section avec image HD -->
-    <div class="relative h-96 md:h-[500px] overflow-hidden">
+    <!-- Hero Section avec image HD - ajusté pour éviter le chevauchement avec la navigation -->
+    <div class="relative h-[calc(100vh-70px)] md:h-[calc(100vh-70px)] min-h-[400px] overflow-hidden">
       <img
         :src="project.images[0]"
         :alt="project.title"
         class="w-full h-full object-cover"
         @error="handleImageError"
       >
-      <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent">
-        <div class="absolute bottom-8 left-8 right-8 text-white">
-          <div class="max-w-4xl mx-auto">
-            <NuxtLink to="/projets" class="text-white/80 hover:text-white mb-4 inline-flex items-center text-sm">
-              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-              </svg>
-              Retour aux projets
-            </NuxtLink>
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">{{ project.title }}</h1>
-            <div class="flex flex-wrap gap-6 text-white/90">
-              <span class="flex items-center">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent">
+        <!-- Bouton retour positionné en haut à gauche, sous la navigation -->
+        <div class="absolute top-6 left-6 z-10">
+          <NuxtLink to="/projets" class="bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 px-4 py-2 rounded-lg inline-flex items-center text-sm font-medium transition-all duration-300 shadow-lg">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Retour aux projets
+          </NuxtLink>
+        </div>
+
+        <!-- Contenu principal centré -->
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="text-center text-white px-6 max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">{{ project.title }}</h1>
+            <div class="flex flex-wrap justify-center gap-6 text-white/90 text-lg">
+              <span class="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                 </svg>
                 {{ project.client }}
               </span>
-              <span class="flex items-center">
+              <span class="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                 </svg>
                 {{ project.date }}
               </span>
-              <span class="flex items-center">
+              <span class="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
@@ -40,50 +45,57 @@
             </div>
           </div>
         </div>
+
+        <!-- Indicateur de scroll en bas -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/70 animate-bounce">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </div>
       </div>
     </div>
 
     <!-- Contenu principal -->
-    <div class="container mx-auto px-4 py-16">
+    <div class="container mx-auto px-4 py-8 md:py-16">
       <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
           <!-- Colonne principale -->
-          <div class="lg:col-span-2 space-y-8">
+          <div class="lg:col-span-2 space-y-6 md:space-y-8">
             <!-- Description du projet -->
-            <section class="bg-white rounded-xl p-8 shadow-lg">
-              <h2 class="text-3xl font-bold mb-6 text-gray-900">À propos du projet</h2>
-              <p class="text-gray-700 leading-relaxed text-lg mb-6">{{ project.description }}</p>
+            <section class="bg-white rounded-xl p-4 md:p-6 lg:p-8 shadow-lg">
+              <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-gray-900">À propos du projet</h2>
+              <p class="text-gray-700 leading-relaxed text-base md:text-lg mb-4 md:mb-6">{{ project.description }}</p>
 
               <!-- Description détaillée -->
-              <div class="prose prose-lg max-w-none">
+              <div class="prose prose-base md:prose-lg max-w-none">
                 <p class="text-gray-600 leading-relaxed">{{ projectDetails.detailedDescription }}</p>
               </div>
             </section>
 
             <!-- Stratégie et approche -->
-            <section class="bg-white rounded-xl p-8 shadow-lg">
-              <h2 class="text-3xl font-bold mb-6 text-gray-900">Stratégie & Approche</h2>
-              <div class="space-y-4">
+            <section class="bg-white rounded-xl p-4 md:p-6 lg:p-8 shadow-lg">
+              <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-gray-900">Stratégie & Approche</h2>
+              <div class="space-y-4 md:space-y-6">
                 <div v-for="(step, index) in projectDetails.strategy" :key="index" class="flex items-start">
-                  <div class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-1">
+                  <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm md:text-base font-bold mr-3 md:mr-4 mt-1">
                     {{ index + 1 }}
                   </div>
-                  <div>
-                    <h3 class="font-semibold text-gray-900 mb-2">{{ step.title }}</h3>
-                    <p class="text-gray-600">{{ step.description }}</p>
+                  <div class="flex-1">
+                    <h3 class="font-semibold text-gray-900 mb-2 text-base md:text-lg">{{ step.title }}</h3>
+                    <p class="text-gray-600 text-sm md:text-base leading-relaxed">{{ step.description }}</p>
                   </div>
                 </div>
               </div>
             </section>
 
             <!-- Image HD -->
-            <section class="bg-white rounded-xl p-8 shadow-lg">
-              <h2 class="text-3xl font-bold mb-6 text-gray-900">Résultat final</h2>
-              <div class="relative rounded-lg overflow-hidden">
+            <section class="bg-white rounded-xl p-4 md:p-6 lg:p-8 shadow-lg">
+              <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-gray-900">Résultat final</h2>
+              <div class="relative rounded-lg overflow-hidden bg-gray-100">
                 <img
                   :src="project.images[0]"
                   :alt="project.title"
-                  class="w-full h-auto max-h-96 object-contain bg-gray-100"
+                  class="w-full h-auto max-h-[300px] md:max-h-[400px] lg:max-h-[500px] object-contain mx-auto"
                   @error="handleImageError"
                 >
               </div>
@@ -91,38 +103,38 @@
           </div>
 
           <!-- Sidebar -->
-          <div class="space-y-6">
+          <div class="space-y-4 md:space-y-6">
             <!-- Informations du projet -->
-            <div class="bg-white rounded-xl p-6 shadow-lg">
-              <h3 class="text-xl font-bold mb-4 text-gray-900">Détails du projet</h3>
-              <div class="space-y-4">
+            <div class="bg-white rounded-xl p-4 md:p-6 shadow-lg">
+              <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-gray-900">Détails du projet</h3>
+              <div class="space-y-3 md:space-y-4">
                 <div>
-                  <label class="text-sm font-medium text-gray-500 uppercase tracking-wide">Client</label>
-                  <p class="text-gray-900 font-semibold">{{ project.client }}</p>
+                  <label class="text-xs md:text-sm font-medium text-gray-500 uppercase tracking-wide block mb-1">Client</label>
+                  <p class="text-gray-900 font-semibold text-sm md:text-base">{{ project.client }}</p>
                 </div>
                 <div>
-                  <label class="text-sm font-medium text-gray-500 uppercase tracking-wide">Catégorie</label>
-                  <p class="text-gray-900 font-semibold">{{ getCategoryDisplayName(project.category) }}</p>
+                  <label class="text-xs md:text-sm font-medium text-gray-500 uppercase tracking-wide block mb-1">Catégorie</label>
+                  <p class="text-gray-900 font-semibold text-sm md:text-base">{{ getCategoryDisplayName(project.category) }}</p>
                 </div>
                 <div>
-                  <label class="text-sm font-medium text-gray-500 uppercase tracking-wide">Date de réalisation</label>
-                  <p class="text-gray-900 font-semibold">{{ project.date }}</p>
+                  <label class="text-xs md:text-sm font-medium text-gray-500 uppercase tracking-wide block mb-1">Date de réalisation</label>
+                  <p class="text-gray-900 font-semibold text-sm md:text-base">{{ project.date }}</p>
                 </div>
                 <div>
-                  <label class="text-sm font-medium text-gray-500 uppercase tracking-wide">Durée du projet</label>
-                  <p class="text-gray-900 font-semibold">{{ projectDetails.duration }} jours</p>
+                  <label class="text-xs md:text-sm font-medium text-gray-500 uppercase tracking-wide block mb-1">Durée du projet</label>
+                  <p class="text-gray-900 font-semibold text-sm md:text-base">{{ projectDetails.duration }} jours</p>
                 </div>
               </div>
             </div>
 
             <!-- Outils utilisés -->
-            <div class="bg-white rounded-xl p-6 shadow-lg">
-              <h3 class="text-xl font-bold mb-4 text-gray-900">Outils utilisés</h3>
+            <div class="bg-white rounded-xl p-4 md:p-6 shadow-lg">
+              <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-gray-900">Outils utilisés</h3>
               <div class="flex flex-wrap gap-2">
                 <span
                   v-for="tool in project.tools"
                   :key="tool"
-                  class="bg-blue-100 text-blue-800 px-3 py-2 rounded-lg text-sm font-medium"
+                  class="bg-blue-100 text-blue-800 px-2 md:px-3 py-1 md:py-2 rounded-lg text-xs md:text-sm font-medium"
                 >
                   {{ tool }}
                 </span>
@@ -130,10 +142,10 @@
             </div>
 
             <!-- Call to action -->
-            <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-6 text-white">
-              <h3 class="text-xl font-bold mb-2">Projet similaire ?</h3>
-              <p class="text-blue-100 mb-4">Contactez-moi pour discuter de votre projet</p>
-              <NuxtLink to="/contact" class="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-block">
+            <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-4 md:p-6 text-white">
+              <h3 class="text-lg md:text-xl font-bold mb-2">Projet similaire ?</h3>
+              <p class="text-blue-100 mb-4 text-sm md:text-base">Contactez-moi pour discuter de votre projet</p>
+              <NuxtLink to="/contact" class="bg-white text-blue-600 px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-block text-sm md:text-base w-full md:w-auto text-center">
                 Me contacter
               </NuxtLink>
             </div>
@@ -144,11 +156,11 @@
   </div>
 
   <!-- Page d'erreur -->
-  <div v-else class="min-h-screen bg-gray-50 flex items-center justify-center">
-    <div class="text-center">
-      <h1 class="text-4xl font-bold text-gray-900 mb-4">Projet non trouvé</h1>
-      <p class="text-gray-600 mb-8">Le projet que vous recherchez n'existe pas ou a été supprimé.</p>
-      <NuxtLink to="/projets" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+  <div v-else class="min-h-screen bg-gray-50 flex items-center justify-center px-4">
+    <div class="text-center max-w-md mx-auto">
+      <h1 class="text-2xl md:text-4xl font-bold text-gray-900 mb-4">Projet non trouvé</h1>
+      <p class="text-gray-600 mb-8 text-sm md:text-base">Le projet que vous recherchez n'existe pas ou a été supprimé.</p>
+      <NuxtLink to="/projets" class="bg-blue-600 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors text-sm md:text-base w-full md:w-auto inline-block">
         Retour aux projets
       </NuxtLink>
     </div>

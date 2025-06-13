@@ -31,18 +31,29 @@
           </svg>
         </button>
       </div>
-      <div v-show="mobileOpen" class="md:hidden pb-4 border-t border-gray-700 mt-4 pt-4">
+      <!-- Menu mobile avec animation -->
+      <div v-show="mobileOpen" class="md:hidden pb-4 border-t border-gray-700 mt-4 pt-4 animate-fade-in">
         <div class="flex flex-col space-y-3">
-          <NuxtLink to="/" class="text-gray-300 hover:text-white hover:bg-white/10 px-4 py-3 rounded-lg transition-all duration-300 font-medium" @click="closeMobile">
+          <NuxtLink to="/" class="text-gray-300 hover:text-white hover:bg-white/10 px-4 py-3 rounded-lg transition-all duration-300 font-medium text-base flex items-center gap-3" @click="closeMobile">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+            </svg>
             Accueil
           </NuxtLink>
-          <NuxtLink to="/projets" class="text-gray-300 hover:text-white hover:bg-white/10 px-4 py-3 rounded-lg transition-all duration-300 font-medium" @click="closeMobile">
+          <NuxtLink to="/projets" class="text-gray-300 hover:text-white hover:bg-white/10 px-4 py-3 rounded-lg transition-all duration-300 font-medium text-base flex items-center gap-3" @click="closeMobile">
+            <span class="text-lg">🎨</span>
             Projets
           </NuxtLink>
-          <NuxtLink to="/about" class="text-gray-300 hover:text-white hover:bg-white/10 px-4 py-3 rounded-lg transition-all duration-300 font-medium" @click="closeMobile">
+          <NuxtLink to="/about" class="text-gray-300 hover:text-white hover:bg-white/10 px-4 py-3 rounded-lg transition-all duration-300 font-medium text-base flex items-center gap-3" @click="closeMobile">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+            </svg>
             À propos
           </NuxtLink>
-          <NuxtLink to="/contact" class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-3 rounded-lg transition-all duration-300 font-medium text-center" @click="closeMobile">
+          <NuxtLink to="/contact" class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-3 rounded-lg transition-all duration-300 font-medium text-center text-base flex items-center justify-center gap-3" @click="closeMobile">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
             Contact
           </NuxtLink>
         </div>
@@ -162,19 +173,42 @@ const closeMobile = () => {
   border: none;
   color: #d1d5db;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.75rem;
   border-radius: 0.5rem;
   transition: all 0.3s ease;
+  min-height: 44px; /* Taille tactile recommandée */
+  min-width: 44px;
 }
 
 .mobile-btn:hover {
   color: white;
   background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.mobile-btn:active {
+  transform: scale(0.95);
 }
 
 .hamburger-icon {
   width: 1.5rem;
   height: 1.5rem;
+}
+
+/* Animation pour le menu mobile */
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Media queries pour responsivité */
