@@ -10,7 +10,7 @@
           <!-- À propos -->
           <div class="md:col-span-2">
             <h3 class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
-              Ramel Granes Boulamidas
+Art Opulence
             </h3>
             <p class="text-gray-300 mb-4 leading-relaxed">
               Designer graphique passionné spécialisé dans la création d'identités visuelles impactantes et le montage vidéo professionnel.
