@@ -7,8 +7,7 @@
             Bonjour, je suis
           </p>
           <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-            Ramel Granes<br>
-            <span class="text-4xl md:text-6xl">Boulamidas</span>
+            Art Opulence
           </h1>
           <div class="text-2xl md:text-3xl font-light mb-8 text-white">
             <span class="block mb-2">Designer Graphique</span>

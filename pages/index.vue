@@ -39,7 +39,7 @@ const { getFeaturedProjects } = useProjects()
 const featuredProjects = await getFeaturedProjects()
 
 useSeoMeta({
-  title: 'Ramel Granes Boulamidas - Designer Graphique & Montage Vidéo',
-  description: 'Portfolio de Ramel Granes Boulamidas, designer graphique spécialisé en création d\'identités visuelles et montage vidéo professionnel. Découvrez mes créations : logos, flyers, affiches, bannières et vidéos.'
+  title: 'Art Opulence - Designer Graphique & Montage Vidéo',
+  description: 'Portfolio de Art Opulence, designer graphique spécialisé en création d\'identités visuelles et montage vidéo professionnel. Découvrez mes créations : logos, flyers, affiches, bannières et vidéos.'
 })
 </script>

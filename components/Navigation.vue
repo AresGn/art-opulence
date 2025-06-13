@@ -3,8 +3,9 @@
     <div class="nav-container">
       <div class="nav-content">
         <!-- Logo/Nom -->
-        <NuxtLink to="/" class="logo">
-          Ramel Granes Boulamidas
+        <NuxtLink to="/" class="logo flex items-center gap-2">
+          <img src="/logo.JPG" alt="Art Opulence Logo" class="h-12 w-auto object-contain bg-white shadow-lg" style="background: white;" />
+          <span class="hidden md:inline text-lg font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Art Opulence</span>
         </NuxtLink>
 
         <!-- Navigation desktop -->
@@ -96,6 +97,15 @@ const closeMobile = () => {
   color: transparent;
   text-decoration: none;
   transition: all 0.3s ease;
+}
+
+.logo img {
+  background: white;
+  border-radius: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  height: 3rem;
+  width: auto;
+  object-fit: contain;
 }
 
 .logo:hover {
