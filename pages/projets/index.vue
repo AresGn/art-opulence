@@ -30,11 +30,22 @@ const { getAllProjects } = useProjects()
 const projects = await getAllProjects()
 
 const selectedCategory = ref('Tous')
-const categories = ['Tous', 'Logo', 'Flyer', 'Affiche', 'Video', 'Banniere']
+const categories = ['Tous', 'Logo', 'Affiche', 'Banniere', 'Carte de visite', 'Packaging']
 
 const filteredProjects = computed(() => {
   if (selectedCategory.value === 'Tous') return projects
-  return projects.filter(p => p.category === selectedCategory.value.toLowerCase())
+
+  // Mapper les noms d'affichage vers les catégories internes
+  const categoryMap = {
+    'Logo': 'logo',
+    'Affiche': 'affiche',
+    'Banniere': 'banniere',
+    'Carte de visite': 'carte-visite',
+    'Packaging': 'packaging'
+  }
+
+  const internalCategory = categoryMap[selectedCategory.value]
+  return projects.filter(p => p.category === internalCategory)
 })
 
 useSeoMeta({

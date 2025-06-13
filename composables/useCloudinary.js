@@ -1,5 +1,5 @@
 export const useCloudinary = () => {
-  const cloudName = 'your-cloud-name' // À remplacer par votre cloud name Cloudinary
+  const cloudName = 'dwsjriapi' // Cloud name Cloudinary configuré
 
   const getOptimizedImageUrl = (publicId, options = {}) => {
     const {
