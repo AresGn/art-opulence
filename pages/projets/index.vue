@@ -1,6 +1,5 @@
 <template>
   <div class="container mx-auto px-4 py-16">
-    <h1 class="text-4xl font-bold mb-8 text-center">Mes Projets</h1>
     <div class="flex flex-wrap justify-center gap-4 mb-12">
       <button 
         v-for="category in categories" 
@@ -16,8 +15,9 @@
         {{ category }}
       </button>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <ProjectCard v-for="project in filteredProjects" :key="project.id" :project="project" />
+    <h1 class="text-4xl font-bold mb-8 text-center">Mes Projets</h1>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+      <ProjectCard v-for="project in filteredProjects.slice(0, 15)" :key="project.id" :project="project" cardClass="aspect-square" />
     </div>
     <div v-if="filteredProjects.length === 0" class="text-center py-12">
       <p class="text-gray-600 text-lg">Aucun projet trouve pour cette categorie.</p>

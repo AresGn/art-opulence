@@ -13,11 +13,27 @@
             alliant créativité et expertise technique.
           </p>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 slide-up">
-          <ProjectCard v-for="project in featuredProjects" :key="project.id" :project="project" class="hover-lift" />
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+          <button 
+            v-for="category in categories" 
+            :key="category"
+            @click="selectedCategory = category"
+            :class="[
+              'px-6 py-2 rounded-full transition-colors',
+              selectedCategory === category 
+                ? 'bg-blue-600 text-white' 
+                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+            ]"
+          >
+            {{ category }}
+          </button>
         </div>
-
+        <div class="grid grid-cols-2 grid-rows-2 gap-8">
+          <ProjectCard v-for="project in filteredProjects.slice(0, 5)" :key="project.id" :project="project" cardClass="aspect-square" />
+        </div>
+        <div v-if="filteredProjects.length === 0" class="text-center py-12">
+          <p class="text-gray-600 text-lg">Aucun projet trouve pour cette categorie.</p>
+        </div>
         <div class="text-center mt-16">
           <NuxtLink
             to="/projets"
@@ -35,8 +51,16 @@
 </template>
 
 <script setup>
-const { getFeaturedProjects } = useProjects()
-const featuredProjects = await getFeaturedProjects()
+const { getAllProjects } = useProjects()
+const projects = await getAllProjects()
+
+const selectedCategory = ref('Tous')
+const categories = ['Tous', 'Logo', 'Flyer', 'Affiche', 'Video', 'Banniere']
+
+const filteredProjects = computed(() => {
+  if (selectedCategory.value === 'Tous') return projects
+  return projects.filter(p => p.category === selectedCategory.value.toLowerCase())
+})
 
 useSeoMeta({
   title: 'Art Opulence - Designer Graphique & Montage Vidéo',

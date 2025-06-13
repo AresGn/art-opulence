@@ -74,5 +74,203 @@
       "https://via.placeholder.com/800x600/F59E0B/FFFFFF?text=Banniere+Mobile"
     ],
     "featured": false
+  },
+  {
+    "id": "logo-restaurant-xyz-2",
+    "title": "Logo Restaurant ABC",
+    "category": "logo",
+    "client": "Restaurant ABC",
+    "date": "2024-04",
+    "tools": ["Illustrator", "Photoshop"],
+    "description": "Logo moderne pour un restaurant branché.",
+    "images": [
+      "https://via.placeholder.com/800x600/3B82F6/FFFFFF?text=Logo+ABC"
+    ],
+    "featured": false
+  },
+  {
+    "id": "flyer-evenement-musical-2",
+    "title": "Flyer Soirée Jazz",
+    "category": "flyer",
+    "client": "Club Jazz Paris",
+    "date": "2024-05",
+    "tools": ["Photoshop"],
+    "description": "Flyer élégant pour une soirée jazz.",
+    "images": [
+      "https://via.placeholder.com/800x600/8B5CF6/FFFFFF?text=Flyer+Jazz"
+    ],
+    "featured": false
+  },
+  {
+    "id": "video-promo-entreprise-2",
+    "title": "Vidéo Corporate",
+    "category": "video",
+    "client": "Entreprise Alpha",
+    "date": "2024-06",
+    "tools": ["Premiere Pro"],
+    "description": "Vidéo corporate pour la communication interne.",
+    "images": [
+      "https://via.placeholder.com/800x600/EF4444/FFFFFF?text=Video+Alpha"
+    ],
+    "video": "https://via.placeholder.com/800x600/EF4444/FFFFFF?text=Video+Alpha",
+    "featured": false
+  },
+  {
+    "id": "affiche-cinema-2",
+    "title": "Affiche Festival Film",
+    "category": "affiche",
+    "client": "Festival Film",
+    "date": "2024-07",
+    "tools": ["Illustrator"],
+    "description": "Affiche pour un festival de cinéma.",
+    "images": [
+      "https://via.placeholder.com/800x600/10B981/FFFFFF?text=Affiche+Festival"
+    ],
+    "featured": false
+  },
+  {
+    "id": "banniere-web-ecommerce-2",
+    "title": "Bannière Soldes Été",
+    "category": "banniere",
+    "client": "Boutique Été",
+    "date": "2024-08",
+    "tools": ["Photoshop"],
+    "description": "Bannière promotionnelle pour les soldes d'été.",
+    "images": [
+      "https://via.placeholder.com/800x600/F59E0B/FFFFFF?text=Banniere+Ete"
+    ],
+    "featured": false
+  },
+  {
+    "id": "logo-restaurant-xyz-3",
+    "title": "Logo Pizzeria Napoli",
+    "category": "logo",
+    "client": "Pizzeria Napoli",
+    "date": "2024-09",
+    "tools": ["Illustrator"],
+    "description": "Logo pour une pizzeria italienne.",
+    "images": [
+      "https://via.placeholder.com/800x600/3B82F6/FFFFFF?text=Logo+Napoli"
+    ],
+    "featured": false
+  },
+  {
+    "id": "flyer-evenement-musical-3",
+    "title": "Flyer Nuit Blanche",
+    "category": "flyer",
+    "client": "Ville de Paris",
+    "date": "2024-10",
+    "tools": ["InDesign"],
+    "description": "Flyer pour la Nuit Blanche à Paris.",
+    "images": [
+      "https://via.placeholder.com/800x600/8B5CF6/FFFFFF?text=Flyer+Nuit+Blanche"
+    ],
+    "featured": false
+  },
+  {
+    "id": "video-promo-entreprise-3",
+    "title": "Vidéo Présentation Produit",
+    "category": "video",
+    "client": "Startup Beta",
+    "date": "2024-11",
+    "tools": ["After Effects"],
+    "description": "Vidéo de présentation d'un nouveau produit.",
+    "images": [
+      "https://via.placeholder.com/800x600/EF4444/FFFFFF?text=Video+Produit"
+    ],
+    "video": "https://via.placeholder.com/800x600/EF4444/FFFFFF?text=Video+Produit",
+    "featured": false
+  },
+  {
+    "id": "affiche-cinema-3",
+    "title": "Affiche Théâtre",
+    "category": "affiche",
+    "client": "Théâtre National",
+    "date": "2024-12",
+    "tools": ["Photoshop"],
+    "description": "Affiche pour une pièce de théâtre.",
+    "images": [
+      "https://via.placeholder.com/800x600/10B981/FFFFFF?text=Affiche+Theatre"
+    ],
+    "featured": false
+  },
+  {
+    "id": "banniere-web-ecommerce-3",
+    "title": "Bannière Black Friday",
+    "category": "banniere",
+    "client": "E-commerce Black Friday",
+    "date": "2024-11",
+    "tools": ["After Effects"],
+    "description": "Bannière pour le Black Friday.",
+    "images": [
+      "https://via.placeholder.com/800x600/F59E0B/FFFFFF?text=Banniere+Black+Friday"
+    ],
+    "featured": false
+  },
+  {
+    "id": "logo-restaurant-xyz-4",
+    "title": "Logo Sushi Bar",
+    "category": "logo",
+    "client": "Sushi Bar",
+    "date": "2025-01",
+    "tools": ["Illustrator"],
+    "description": "Logo pour un bar à sushi.",
+    "images": [
+      "https://via.placeholder.com/800x600/3B82F6/FFFFFF?text=Logo+Sushi+Bar"
+    ],
+    "featured": false
+  },
+  {
+    "id": "flyer-evenement-musical-4",
+    "title": "Flyer Carnaval",
+    "category": "flyer",
+    "client": "Ville de Nice",
+    "date": "2025-02",
+    "tools": ["Photoshop"],
+    "description": "Flyer pour le carnaval de Nice.",
+    "images": [
+      "https://via.placeholder.com/800x600/8B5CF6/FFFFFF?text=Flyer+Carnaval"
+    ],
+    "featured": false
+  },
+  {
+    "id": "video-promo-entreprise-4",
+    "title": "Vidéo Motion Design",
+    "category": "video",
+    "client": "Agence Motion",
+    "date": "2025-03",
+    "tools": ["After Effects"],
+    "description": "Vidéo motion design pour une agence.",
+    "images": [
+      "https://via.placeholder.com/800x600/EF4444/FFFFFF?text=Video+Motion"
+    ],
+    "video": "https://via.placeholder.com/800x600/EF4444/FFFFFF?text=Video+Motion",
+    "featured": false
+  },
+  {
+    "id": "affiche-cinema-4",
+    "title": "Affiche Exposition",
+    "category": "affiche",
+    "client": "Musée d'Art",
+    "date": "2025-04",
+    "tools": ["Illustrator"],
+    "description": "Affiche pour une exposition d'art.",
+    "images": [
+      "https://via.placeholder.com/800x600/10B981/FFFFFF?text=Affiche+Expo"
+    ],
+    "featured": false
+  },
+  {
+    "id": "banniere-web-ecommerce-4",
+    "title": "Bannière Nouvel An",
+    "category": "banniere",
+    "client": "Boutique Nouvel An",
+    "date": "2025-01",
+    "tools": ["Photoshop"],
+    "description": "Bannière pour la promotion du Nouvel An.",
+    "images": [
+      "https://via.placeholder.com/800x600/F59E0B/FFFFFF?text=Banniere+Nouvel+An"
+    ],
+    "featured": false
   }
 ]
