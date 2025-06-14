@@ -68,3 +68,147 @@
     transform: translateY(0);
   }
 }
+
+/* Styles pour la section témoignages */
+.testimonials-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .testimonial-avatar {
+    width: 80px;
+    height: 80px;
+    border: 4px solid rgba(255, 255, 255, 0.8);
+  }
+}
+
+.testimonial-avatar:hover {
+  transform: scale(1.05);
+  border-color: #667eea;
+}
+
+.testimonials-swiper .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.testimonials-swiper .swiper-pagination-bullet-active {
+  background: white;
+  transform: scale(1.2);
+}
+
+.testimonials-swiper .swiper-button-next,
+.testimonials-swiper .swiper-button-prev {
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .testimonials-swiper .swiper-button-next,
+  .testimonials-swiper .swiper-button-prev {
+    width: 50px;
+    height: 50px;
+    margin-top: -25px;
+  }
+}
+
+.testimonials-swiper .swiper-button-next:hover,
+.testimonials-swiper .swiper-button-prev:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.testimonials-swiper .swiper-button-next::after,
+.testimonials-swiper .swiper-button-prev::after {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .testimonials-swiper .swiper-button-next::after,
+  .testimonials-swiper .swiper-button-prev::after {
+    font-size: 18px;
+  }
+}
+
+/* Masquer les boutons de navigation sur très petit écran */
+@media (max-width: 480px) {
+  .testimonials-swiper .swiper-button-next,
+  .testimonials-swiper .swiper-button-prev {
+    display: none;
+  }
+}
+
+@keyframes testimonialFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.testimonial-animate {
+  animation: testimonialFadeIn 0.8s ease-out;
+}
+
+/* Utilitaire pour limiter le nombre de lignes */
+.line-clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Responsive pour les témoignages */
+@media (max-width: 640px) {
+  .testimonials-section {
+    padding: 3rem 0;
+  }
+
+  .testimonial-card {
+    min-height: 300px;
+    padding: 1rem;
+  }
+
+  .line-clamp-4 {
+    -webkit-line-clamp: 3;
+  }
+}
