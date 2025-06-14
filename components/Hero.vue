@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white py-20 min-h-screen flex items-center">
+  <section class="hero-section bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white py-20 min-h-screen flex items-center">
     <div class="container mx-auto px-4 text-center">
       <div class="max-w-4xl mx-auto">
         <div class="fade-in">
@@ -36,3 +36,47 @@
     </div>
   </section>
 </template>
+
+<script setup>
+import { onMounted, nextTick } from 'vue'
+
+onMounted(() => {
+  // S'assurer qu'aucun élément Swiper n'apparaît dans la section Hero
+  nextTick(() => {
+    const heroSection = document.querySelector('.hero-section')
+    if (heroSection) {
+      // Supprimer tous les éléments Swiper qui pourraient apparaître dans le Hero
+      const swiperElements = heroSection.querySelectorAll('*[class*="swiper-"], .swiper-pagination, .swiper-button-next, .swiper-button-prev')
+      swiperElements.forEach(el => {
+        el.remove()
+      })
+
+      // Observer les mutations pour supprimer tout élément Swiper ajouté dynamiquement
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          mutation.addedNodes.forEach((node) => {
+            if (node.nodeType === 1) { // Element node
+              if (node.classList && (
+                node.classList.toString().includes('swiper-') ||
+                node.className.includes('swiper-')
+              )) {
+                node.remove()
+              }
+              // Vérifier les enfants aussi
+              const childSwiperElements = node.querySelectorAll && node.querySelectorAll('*[class*="swiper-"], .swiper-pagination, .swiper-button-next, .swiper-button-prev')
+              if (childSwiperElements) {
+                childSwiperElements.forEach(child => child.remove())
+              }
+            }
+          })
+        })
+      })
+
+      observer.observe(heroSection, {
+        childList: true,
+        subtree: true
+      })
+    }
+  })
+})
+</script>

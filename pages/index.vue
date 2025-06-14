@@ -46,6 +46,7 @@
         </div>
       </div>
     </section>
+    <TestimonialsSection />
     <SkillsSection />
   </div>
 </template>
