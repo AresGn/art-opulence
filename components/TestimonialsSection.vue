@@ -17,7 +17,7 @@
             :key="testimonial.id"
             class="swiper-slide"
           >
-            <div class="testimonial-card rounded-2xl p-6 md:p-8 mx-2 md:mx-4 text-center h-auto">
+            <div class="testimonial-card rounded-2xl p-4 md:p-6 mx-1 md:mx-2 text-center h-auto">
               <!-- Avatar -->
               <div class="mb-4 md:mb-6 flex justify-center">
                 <img
@@ -64,11 +64,7 @@
         </div>
 
         <!-- Pagination -->
-        <div class="swiper-pagination mt-8 md:mt-12"></div>
-
-        <!-- Navigation -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="testimonials-swiper-pagination mt-8 md:mt-12"></div>
       </div>
     </div>
   </section>
@@ -76,9 +72,8 @@
 
 <script setup>
 import Swiper from 'swiper'
-import { Navigation, Pagination, Autoplay } from 'swiper/modules'
+import { Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
-import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/autoplay'
 
@@ -144,9 +139,9 @@ const getInitials = (name) => {
 onMounted(() => {
   if (swiperContainer.value) {
     const swiper = new Swiper(swiperContainer.value, {
-      modules: [Navigation, Pagination, Autoplay],
+      modules: [Pagination, Autoplay],
       slidesPerView: 1,
-      spaceBetween: 20,
+      spaceBetween: 16,
       centeredSlides: false,
       loop: true,
       autoplay: {
@@ -154,39 +149,35 @@ onMounted(() => {
         disableOnInteraction: false,
         pauseOnMouseEnter: true,
       },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
       pagination: {
-        el: '.swiper-pagination',
+        el: swiperContainer.value.querySelector('.testimonials-swiper-pagination'),
         clickable: true,
         dynamicBullets: true,
       },
       breakpoints: {
         320: {
           slidesPerView: 1,
-          spaceBetween: 15,
+          spaceBetween: 12,
           centeredSlides: false,
         },
         640: {
           slidesPerView: 1,
-          spaceBetween: 20,
+          spaceBetween: 16,
           centeredSlides: false,
         },
         768: {
           slidesPerView: 2,
-          spaceBetween: 25,
+          spaceBetween: 16,
           centeredSlides: false,
         },
         1024: {
           slidesPerView: 3,
-          spaceBetween: 30,
+          spaceBetween: 20,
           centeredSlides: false,
         },
         1280: {
           slidesPerView: 3,
-          spaceBetween: 40,
+          spaceBetween: 24,
           centeredSlides: false,
         },
       },
@@ -197,6 +188,40 @@ onMounted(() => {
     })
 
     console.log('Swiper des témoignages initialisé avec autoplay:', swiper.autoplay)
+
+    // Masquer TOUS les éléments Swiper qui ne sont pas dans la section témoignages
+    nextTick(() => {
+      // Masquer tous les éléments Swiper globaux (sauf pagination des témoignages)
+      const allSwiperElements = document.querySelectorAll('.swiper-pagination, .swiper-button-next, .swiper-button-prev')
+      allSwiperElements.forEach(el => {
+        if (!el.closest('.testimonials-section') || el.classList.contains('swiper-button-next') || el.classList.contains('swiper-button-prev')) {
+          el.style.display = 'none !important'
+          el.style.visibility = 'hidden !important'
+          el.style.opacity = '0 !important'
+          el.style.pointerEvents = 'none !important'
+          el.style.position = 'absolute !important'
+          el.style.left = '-9999px !important'
+          el.style.top = '-9999px !important'
+          el.style.zIndex = '-1 !important'
+        }
+      })
+
+      // Forcer la suppression dans la section Hero spécifiquement
+      const heroSection = document.querySelector('.hero-section')
+      if (heroSection) {
+        const heroSwiperElements = heroSection.querySelectorAll('*[class*="swiper-"], .swiper-pagination, .swiper-button-next, .swiper-button-prev')
+        heroSwiperElements.forEach(el => {
+          el.style.display = 'none !important'
+          el.style.visibility = 'hidden !important'
+          el.style.opacity = '0 !important'
+          el.style.pointerEvents = 'none !important'
+          el.style.position = 'absolute !important'
+          el.style.left = '-9999px !important'
+          el.style.top = '-9999px !important'
+          el.style.zIndex = '-1 !important'
+        })
+      }
+    })
   }
 })
 </script>

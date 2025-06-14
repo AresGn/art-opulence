@@ -69,6 +69,64 @@
   }
 }
 
+/* MASQUER COMPLÈTEMENT tous les éléments Swiper par défaut */
+.swiper-pagination,
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  z-index: -1 !important;
+}
+
+/* FORCER la suppression des éléments Swiper dans le Hero et partout sauf témoignages */
+.hero-section *[class*="swiper-"],
+.hero-section .swiper-pagination,
+.hero-section .swiper-button-next,
+.hero-section .swiper-button-prev,
+body > .swiper-pagination,
+body > .swiper-button-next,
+body > .swiper-button-prev,
+*:not(.testimonials-section) .swiper-pagination,
+*:not(.testimonials-section) .swiper-button-next,
+*:not(.testimonials-section) .swiper-button-prev {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  z-index: -1 !important;
+}
+
+/* Réactiver UNIQUEMENT la pagination pour les témoignages */
+.testimonials-section .testimonials-swiper-pagination {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  z-index: 10 !important;
+}
+
+/* Empêcher tout défilement horizontal sur la section Hero */
+.hero-section {
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
+  position: relative !important;
+}
+
+.hero-section * {
+  overflow-x: hidden !important;
+}
+
 /* Styles pour la section témoignages */
 .testimonials-section {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -79,12 +137,14 @@
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
-  min-height: 350px;
+  min-height: 320px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   max-width: 100%;
   overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .testimonial-card:hover {
@@ -115,63 +175,28 @@
   border-color: #667eea;
 }
 
-.testimonials-swiper .swiper-pagination-bullet {
+/* Règles supprimées - remplacées par une approche plus ciblée ci-dessus */
+
+/* Styles pour la pagination des témoignages */
+.testimonials-swiper-pagination {
+  position: relative !important;
+  bottom: auto !important;
+  text-align: center;
+}
+
+.testimonials-swiper-pagination .swiper-pagination-bullet {
   background: rgba(255, 255, 255, 0.5);
   opacity: 1;
   transition: all 0.3s ease;
+  margin: 0 4px;
 }
 
-.testimonials-swiper .swiper-pagination-bullet-active {
+.testimonials-swiper-pagination .swiper-pagination-bullet-active {
   background: white;
   transform: scale(1.2);
 }
 
-.testimonials-swiper .swiper-button-next,
-.testimonials-swiper .swiper-button-prev {
-  color: white;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  margin-top: -20px;
-  transition: all 0.3s ease;
-}
-
-@media (min-width: 768px) {
-  .testimonials-swiper .swiper-button-next,
-  .testimonials-swiper .swiper-button-prev {
-    width: 50px;
-    height: 50px;
-    margin-top: -25px;
-  }
-}
-
-.testimonials-swiper .swiper-button-next:hover,
-.testimonials-swiper .swiper-button-prev:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: scale(1.1);
-}
-
-.testimonials-swiper .swiper-button-next::after,
-.testimonials-swiper .swiper-button-prev::after {
-  font-size: 14px;
-  font-weight: bold;
-}
-
-@media (min-width: 768px) {
-  .testimonials-swiper .swiper-button-next::after,
-  .testimonials-swiper .swiper-button-prev::after {
-    font-size: 18px;
-  }
-}
-
-/* Masquer les boutons de navigation sur très petit écran */
-@media (max-width: 480px) {
-  .testimonials-swiper .swiper-button-next,
-  .testimonials-swiper .swiper-button-prev {
-    display: none;
-  }
-}
+/* Styles supprimés - navigation par flèches retirée */
 
 @keyframes testimonialFadeIn {
   from {
@@ -197,15 +222,44 @@
   text-overflow: ellipsis;
 }
 
+/* Améliorer le conteneur des témoignages pour éviter le débordement */
+.testimonials-swiper {
+  overflow: hidden;
+  padding: 0 !important;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+.testimonials-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+.testimonials-swiper .swiper-slide {
+  height: auto;
+  display: flex;
+  align-items: stretch;
+  box-sizing: border-box;
+  padding: 0;
+}
+
 /* Responsive pour les témoignages */
 @media (max-width: 640px) {
   .testimonials-section {
     padding: 3rem 0;
+    overflow-x: hidden;
+  }
+
+  .testimonials-swiper {
+    padding: 0 1rem !important;
+    margin: 0 auto;
   }
 
   .testimonial-card {
-    min-height: 300px;
+    min-height: 280px;
     padding: 1rem;
+    margin: 0 !important;
+    width: 100%;
   }
 
   .line-clamp-4 {
