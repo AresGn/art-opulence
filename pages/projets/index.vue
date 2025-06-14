@@ -16,8 +16,8 @@
       </button>
     </div>
     <h1 class="text-4xl font-bold mb-8 text-center">Mes Projets</h1>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
-      <ProjectCard v-for="project in filteredProjects.slice(0, 15)" :key="project.id" :project="project" cardClass="aspect-square" />
+    <div class="projects-grid">
+      <ProjectCard v-for="project in filteredProjects" :key="project.id" :project="project" />
     </div>
     <div v-if="filteredProjects.length === 0" class="text-center py-12">
       <p class="text-gray-600 text-lg">Aucun projet trouve pour cette categorie.</p>
@@ -30,11 +30,22 @@ const { getAllProjects } = useProjects()
 const projects = await getAllProjects()
 
 const selectedCategory = ref('Tous')
-const categories = ['Tous', 'Logo', 'Flyer', 'Affiche', 'Video', 'Banniere']
+const categories = ['Tous', 'Logo', 'Affiche', 'Banniere', 'Carte de visite', 'Packaging']
 
 const filteredProjects = computed(() => {
   if (selectedCategory.value === 'Tous') return projects
-  return projects.filter(p => p.category === selectedCategory.value.toLowerCase())
+
+  // Mapper les noms d'affichage vers les catégories internes
+  const categoryMap = {
+    'Logo': 'logo',
+    'Affiche': 'affiche',
+    'Banniere': 'banniere',
+    'Carte de visite': 'carte-visite',
+    'Packaging': 'packaging'
+  }
+
+  const internalCategory = categoryMap[selectedCategory.value]
+  return projects.filter(p => p.category === internalCategory)
 })
 
 useSeoMeta({
